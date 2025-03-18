@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    cursor: url(/monster/img/mouse.png) 28 14, auto
+    cursor: url(img/mouse.png) 28 14, auto
 }
 @keyframes going {
     0%{
@@ -16,14 +16,14 @@ body {
     padding: 0;
     height: 100vh;
     width: 100vw;
-    background: url(/monster/img/bg-content.1bd653a3.jpg);
+    background: url(img/bg-content.1bd653a3.jpg);
     background-size: cover;
     background-position: top center;
     z-index: 0;
 }
 
 .firstpage {
-    background-image: url(/monster/img/c_img_03_l.png);
+    background-image: url(img/c_img_03_l.png);
     background-position: -90% 0%;
     background-repeat: no-repeat;
     background-size: 80%;
@@ -72,7 +72,7 @@ body {
     width: 55%;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.8)40%, transparent);
     border: 0;
-    cursor: url(/monster/img/click3.png) 10 0, auto;
+    cursor: url(img/click3.png) 10 0, auto;
     animation-name: going;
     animation-duration: 0.4s;
 }
@@ -130,7 +130,7 @@ body {
     background:rgba(110, 97, 97, 0.1);
     border: 0.5px solid ;
     border-color: rgba(68, 67, 67, 0.4);
-    cursor: url(/monster/img/click3.png) 10 0, auto;
+    cursor: url(img/click3.png) 10 0, auto;
 }
 .all_weapon_button img{
     width: 20%;
@@ -140,7 +140,7 @@ body {
     color: rgb(129, 133, 127);
 }
 .title_bg{
-    background-image: url(/monster/img/char.png);
+    background-image: url(img/char.png);
     background-position: 190% 0%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -150,7 +150,7 @@ body {
     width: 100%;
 }
 .talk_bg{
-    background-image: url(/monster/img/char3.png);
+    background-image: url(img/char3.png);
     background-position: 150% 0%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -160,7 +160,7 @@ body {
     width: 100%;
 }
 .choose_bg{
-    background-image: url(/monster/img/char2.png);
+    background-image: url(img/char2.png);
     background-position: 190% 0%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -194,7 +194,7 @@ body {
     width: 300px;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.8)40%, transparent);
     border: 0;
-    cursor: url(/monster/img/click3.png) 10 0, auto;
+    cursor: url(img/click3.png) 10 0, auto;
 }
 
 .talk1 {
@@ -238,7 +238,7 @@ body {
     font-size: 35px;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.8)60%, transparent 90%);
     border: 0px;
-    cursor: url(/monster/img/click3.png) 10 0, auto;
+    cursor: url(img/click3.png) 10 0, auto;
     animation-name: going;
     animation-duration: 0.5s;
 }
@@ -290,7 +290,7 @@ body {
     font-size: 35px;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.8)60%, transparent 90%);
     border: 0px;
-    cursor: url(/monster/img/click3.png) 10 0, auto;
+    cursor: url(img/click3.png) 10 0, auto;
     animation-name: going;
     animation-duration: 0.5s;
 }
@@ -326,7 +326,7 @@ body {
     font-size: 35px;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.8)60%, transparent 90%);
     border: 0px;
-    cursor: url(/monster/img/click3.png) 10 0, auto;
+    cursor: url(img/click3.png) 10 0, auto;
     animation-name: going;
     animation-duration: 0.5s;
 }
@@ -362,7 +362,7 @@ body {
     font-size: 35px;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.8)60%, transparent 90%);
     border: 0px;
-    cursor: url(/monster/img/click3.png) 10 0, auto;
+    cursor: url(img/click3.png) 10 0, auto;
     animation-name: going;
     animation-duration: 0.5s;
 }
@@ -400,7 +400,7 @@ body {
     font-size: 35px;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.8)60%, transparent 90%);
     border: 0px;
-    cursor: url(/monster/img/click3.png) 10 0, auto;
+    cursor: url(img/click3.png) 10 0, auto;
     animation-name: going;
     animation-duration: 0.5s;
 }
@@ -513,7 +513,7 @@ body {
 }
 
 .leftinttext::before {
-    background: url(/monster/img/mask_edge_l.72746c45.png);
+    background: url(img/mask_edge_l.72746c45.png);
     transform: rotate(-90deg);
     width: 50%;
     height: 50%;
@@ -546,7 +546,7 @@ body {
 }
 
 .video video {
-    mask: url(/monster/img/mask2_mv_pc.82e29a33.png)no-repeat center center;
+    mask: url(img/mask2_mv_pc.82e29a33.png)no-repeat center center;
     mask-size: 90%;
     height: 100%;
 }
@@ -589,7 +589,7 @@ body {
     color: aliceblue;
     width: 80%;
     height: 10%;
-    cursor: url(/monster/img/click3.png) 10 0, auto;
+    cursor: url(img/click3.png) 10 0, auto;
 }
 
 .control img {
@@ -605,7 +605,7 @@ body {
     background-color: transparent;
     border: 0px;
     color: rgb(150, 161, 170);
-    cursor: url(/monster/img/click3.png) 10 0, auto;
+    cursor: url(img/click3.png) 10 0, auto;
 }
 
 .closebutton {
@@ -618,5 +618,5 @@ body {
     background-color: transparent;
     border: 0px;
     color: rgb(150, 161, 170);
-    cursor: url(/monster/img/click3.png) 10 0, auto;
+    cursor: url(img/click3.png) 10 0, auto;
 }
