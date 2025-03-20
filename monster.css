@@ -30,7 +30,7 @@ body {
     z-index: 0;
 }
 
-.hambur {
+.hambur_index {
     position: absolute;
     bottom: 3%;
     right: 6%;
@@ -38,7 +38,18 @@ body {
     width: 11vw;
     background-color: transparent
 }
-
+.into_weapon:hover,
+.index_button:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.hambur_else{
+    position: absolute;
+    top: 6%;
+    right: 9%;
+    height: 5vh;
+    width: 11vw;
+    background-color: transparent
+}
 .firstpage {
     background-image: url(img/c_img_03_l.png);
     background-position: -110% 0%;
@@ -137,6 +148,8 @@ body {
     font-size: 20px;
     border-radius: 5px;
     border: 2px solid;
+    cursor: url(img/click3.png) 10 0, auto;
+    transition-duration: 1s
 }
 
 .index_button {
@@ -145,6 +158,8 @@ body {
     font-size: 20px;
     border-radius: 5px;
     border: 2px solid;
+    cursor: url(img/click3.png) 10 0, auto;
+    transition-duration: 1s
 }
 
 .all_weapon_box {
@@ -564,8 +579,6 @@ body {
 }
 
 .all_weapon_button:hover,
-.talk1_close:hover,
-.choosebox_close:hover,
 .ans1_text:hover,
 .heave1_text:hover,
 .dex1_text:hover,
@@ -956,7 +969,7 @@ body {
 
 .talk1_close,
 .choosebox_close {
-    z-index: 5;
+    /* z-index: 5;
     position: absolute;
     right: 4%;
     top: 9%;
@@ -965,7 +978,7 @@ body {
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.3);
     border: 0px;
-    color: rgb(150, 161, 170);
+    color: rgb(150, 161, 170); */
     cursor: url(img/click3.png) 10 0, auto;
 }
 
