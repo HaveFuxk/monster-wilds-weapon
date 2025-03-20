@@ -4,10 +4,11 @@ var all_weapon_box = document.querySelector(".all_weapon_box")
 var firstpage = document.querySelector(".firstpage")
 var into_talk_button = document.querySelector(".into_talk")
 var into_weapon_button = document.querySelector(".into_weapon")
-var startbutton = document.querySelector(".start_box")
 var titlebox = document.querySelector(".title_bg")
 var choosebox = document.querySelector(".choose_bg")
 var talk1 = document.querySelector(".talk_bg")
+var talk1_close =document.querySelector(".talk1_close")
+var choosebox_close = document.querySelector(".choosebox_close")
 var heavebutton = document.querySelector(".heave")
 var dexbutton = document.querySelector(".dex")
 var defbutton = document.querySelector(".def")
@@ -61,8 +62,7 @@ var videoint = document.querySelector(".videoint")
 
 // 以下為對話以及通用function
 function start() {
-    titlebox.classList.add("off")
-    startbutton.classList.add("off")
+    firstpage.classList.add("off")
     talk1.classList.remove("off")
 }
 function chooseheave() {
@@ -101,14 +101,14 @@ function menu() {
     all_weapon_box.classList.add("off")
     weaponbox.classList.add("off")
     choosebox.classList.add("off")
+    talk1.classList.add("off")
+    range_box.classList.add("off")
+    heave_box.classList.add("off")
+    dex_box.classList.add("off")
+    def_box.classList.add("off")
     firstpage.classList.remove("off")
     video_box.innerHTML = ""
     videoint.innerHTML = ""
-}
-function intotalk() {
-    firstpage.classList.add("off")
-    titlebox.classList.remove("off")
-    startbutton.classList.remove("off")
 }
 function into_weapon() {
     all_weapon_box.classList.remove("off")
@@ -161,13 +161,14 @@ function gsw_display() {
     // gsw_firstvideo的數量超過1個 所以要用迴圈的方式修改 一定要加length
     // 下面的pause則是挺指撥放影片以及回到一開始的撥放進度
     function choose_gsw_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < gsw_firstvideo.length; i++) {
             gsw_firstvideo[i].classList.remove("off")
             gsw_seconvideo[i].classList.add("off")
             gsw_thirdvideo[i].classList.add("off")
+            gsw_firstvideo[0].play()
             gsw_seconvideo[0].pause()
             gsw_thirdvideo[0].pause()
             gsw_seconvideo[0].currentTime = 0
@@ -175,13 +176,14 @@ function gsw_display() {
         }
     }
     function choose_gsw_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < gsw_firstvideo.length; i++) {
             gsw_firstvideo[i].classList.add("off")
             gsw_seconvideo[i].classList.remove("off")
             gsw_thirdvideo[i].classList.add("off")
+            gsw_seconvideo[0].play()
             gsw_firstvideo[0].pause()
             gsw_thirdvideo[0].pause()
             gsw_firstvideo[0].currentTime = 0
@@ -190,13 +192,14 @@ function gsw_display() {
         }
     }
     function choose_gsw_thirdvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < gsw_firstvideo.length; i++) {
             gsw_firstvideo[i].classList.add("off")
             gsw_seconvideo[i].classList.add("off")
             gsw_thirdvideo[i].classList.remove("off")
+            gsw_thirdvideo[0].play()
             gsw_firstvideo[0].pause()
             gsw_seconvideo[0].pause()
             gsw_firstvideo[0].currentTime = 0
@@ -257,13 +260,14 @@ function lsw_display() {
     <div class="lsw_tvideo off">居合為太刀的一種特殊動作,可以閃避魔物的攻擊同時反擊,也有許多派生動作</div>`
 
     function choose_lsw_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < lsw_firstvideo.length; i++) {
             lsw_firstvideo[i].classList.remove("off")
             lsw_seconvideo[i].classList.add("off")
             lsw_thirdvideo[i].classList.add("off")
+            lsw_firstvideo[0].play()
             lsw_seconvideo[0].pause()
             lsw_thirdvideo[0].pause()
             lsw_seconvideo[0].currentTime = 0
@@ -271,13 +275,14 @@ function lsw_display() {
         }
     }
     function choose_lsw_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < lsw_firstvideo.length; i++) {
             lsw_firstvideo[i].classList.add("off")
             lsw_seconvideo[i].classList.remove("off")
             lsw_thirdvideo[i].classList.add("off")
+            lsw_seconvideo[0].play()
             lsw_firstvideo[0].pause()
             lsw_thirdvideo[0].pause()
             lsw_firstvideo[0].currentTime = 0
@@ -285,13 +290,14 @@ function lsw_display() {
         }
     }
     function choose_lsw_thirdvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < lsw_firstvideo.length; i++) {
             lsw_firstvideo[i].classList.add("off")
             lsw_seconvideo[i].classList.add("off")
             lsw_thirdvideo[i].classList.remove("off")
+            lsw_thirdvideo[0].play()
             lsw_firstvideo[0].pause()
             lsw_seconvideo[0].pause()
             lsw_firstvideo[0].currentTime = 0
@@ -352,14 +358,15 @@ function sw_shield_display() {
     <div class="sw_shield_tvideo off">滑步斬為單手劍中可以大幅度位移的攻擊動作,適合躲避魔物攻擊</div>`
 
     function choose_sw_shield_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
-        
+
         for (var i = 0; i < sw_shield_firstvideo.length; i++) {
             sw_shield_firstvideo[i].classList.remove("off")
             sw_shield_seconvideo[i].classList.add("off")
             sw_shield_thirdvideo[i].classList.add("off")
+            sw_shield_firstvideo[0].play()
             sw_shield_seconvideo[0].pause()
             sw_shield_thirdvideo[0].pause()
             sw_shield_seconvideo[0].currentTime = 0
@@ -367,14 +374,15 @@ function sw_shield_display() {
         }
     }
     function choose_sw_shield_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
-        
+
         for (var i = 0; i < sw_shield_firstvideo.length; i++) {
             sw_shield_firstvideo[i].classList.add("off")
             sw_shield_seconvideo[i].classList.remove("off")
             sw_shield_thirdvideo[i].classList.add("off")
+            sw_shield_seconvideo[0].play()
             sw_shield_firstvideo[0].pause()
             sw_shield_thirdvideo[0].pause()
             sw_shield_firstvideo[0].currentTime = 0
@@ -382,14 +390,15 @@ function sw_shield_display() {
         }
     }
     function choose_sw_shield_thirdvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
-        
+
         for (var i = 0; i < sw_shield_firstvideo.length; i++) {
             sw_shield_firstvideo[i].classList.add("off")
             sw_shield_seconvideo[i].classList.add("off")
             sw_shield_thirdvideo[i].classList.remove("off")
+            sw_shield_thirdvideo[0].play()
             sw_shield_firstvideo[0].pause()
             sw_shield_seconvideo[0].pause()
             sw_shield_firstvideo[0].currentTime = 0
@@ -450,14 +459,15 @@ function db_display() {
     <div class="db_tvideo off">鬼人亂舞,為雙刀連段裡其中一種,傷害和攻擊段數都很可觀</div>`
 
     function choose_db_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
-        
+
         for (var i = 0; i < db_firstvideo.length; i++) {
             db_firstvideo[i].classList.remove("off")
             db_seconvideo[i].classList.add("off")
             db_thirdvideo[i].classList.add("off")
+            db_firstvideo[0].play()
             db_seconvideo[0].pause()
             db_thirdvideo[0].pause()
             db_seconvideo[0].currentTime = 0
@@ -465,29 +475,31 @@ function db_display() {
         }
     }
     function choose_db_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
-        
+
         for (var i = 0; i < db_firstvideo.length; i++) {
             db_firstvideo[i].classList.add("off")
             db_seconvideo[i].classList.remove("off")
             db_thirdvideo[i].classList.add("off")
+            db_seconvideo[0].play()
             db_firstvideo[0].pause()
             db_thirdvideo[0].pause()
             db_firstvideo[0].currentTime = 0
             db_thirdvideo[0].currentTime = 0
         }
     }
-    function choose_db_thirdvideo() {     
-        for(var i = 0;i < 3;i++){
+    function choose_db_thirdvideo() {
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
-        
+
         for (var i = 0; i < db_firstvideo.length; i++) {
             db_firstvideo[i].classList.add("off")
             db_seconvideo[i].classList.add("off")
             db_thirdvideo[i].classList.remove("off")
+            db_thirdvideo[0].play()
             db_firstvideo[0].pause()
             db_seconvideo[0].pause()
             db_firstvideo[0].currentTime = 0
@@ -548,13 +560,14 @@ function hammer_display() {
     <div class="hammer_tvideo off">渾身蓄力,大槌的一種進階蓄力,能造成大量傷害後繼續派生其他動作</div>`
 
     function choose_hammer_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < hammer_firstvideo.length; i++) {
             hammer_firstvideo[i].classList.remove("off")
             hammer_seconvideo[i].classList.add("off")
             hammer_thirdvideo[i].classList.add("off")
+            hammer_firstvideo[0].play()
             hammer_seconvideo[0].pause()
             hammer_thirdvideo[0].pause()
             hammer_seconvideo[0].currentTime = 0
@@ -562,13 +575,14 @@ function hammer_display() {
         }
     }
     function choose_hammer_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < hammer_firstvideo.length; i++) {
             hammer_firstvideo[i].classList.add("off")
             hammer_seconvideo[i].classList.remove("off")
             hammer_thirdvideo[i].classList.add("off")
+            hammer_seconvideo[0].play()
             hammer_firstvideo[0].pause()
             hammer_thirdvideo[0].pause()
             hammer_firstvideo[0].currentTime = 0
@@ -576,13 +590,14 @@ function hammer_display() {
         }
     }
     function choose_hammer_thirdvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < hammer_firstvideo.length; i++) {
             hammer_firstvideo[i].classList.add("off")
             hammer_seconvideo[i].classList.add("off")
             hammer_thirdvideo[i].classList.remove("off")
+            hammer_thirdvideo[0].play()
             hammer_firstvideo[0].pause()
             hammer_seconvideo[0].pause()
             hammer_firstvideo[0].currentTime = 0
@@ -643,13 +658,14 @@ function hh_display() {
     <div class="hh_tvideo off">連消帶打,可以打斷魔物攻擊,同時派生強力打擊</div>`
 
     function choose_hh_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < hh_firstvideo.length; i++) {
             hh_firstvideo[i].classList.remove("off")
             hh_seconvideo[i].classList.add("off")
             hh_thirdvideo[i].classList.add("off")
+            hh_firstvideo[0].play()
             hh_seconvideo[0].pause()
             hh_thirdvideo[0].pause()
             hh_seconvideo[0].currentTime = 0
@@ -657,13 +673,14 @@ function hh_display() {
         }
     }
     function choose_hh_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < hh_firstvideo.length; i++) {
             hh_firstvideo[i].classList.add("off")
             hh_seconvideo[i].classList.remove("off")
             hh_thirdvideo[i].classList.add("off")
+            hh_seconvideo[0].play()
             hh_firstvideo[0].pause()
             hh_thirdvideo[0].pause()
             hh_firstvideo[0].currentTime = 0
@@ -671,13 +688,14 @@ function hh_display() {
         }
     }
     function choose_hh_thirdvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < hh_firstvideo.length; i++) {
             hh_firstvideo[i].classList.add("off")
             hh_seconvideo[i].classList.add("off")
             hh_thirdvideo[i].classList.remove("off")
+            hh_thirdvideo[0].play()
             hh_firstvideo[0].pause()
             hh_seconvideo[0].pause()
             hh_firstvideo[0].currentTime = 0
@@ -738,13 +756,14 @@ function lance_display() {
     <div class="lance_tvideo off">角力,可以抵擋魔物攻勢,並且跟魔物比拚力量後接者反擊</div>`
 
     function choose_lance_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < lance_firstvideo.length; i++) {
             lance_firstvideo[i].classList.remove("off")
             lance_seconvideo[i].classList.add("off")
             lance_thirdvideo[i].classList.add("off")
+            lance_firstvideo[0].play()
             lance_seconvideo[0].pause()
             lance_thirdvideo[0].pause()
             lance_seconvideo[0].currentTime = 0
@@ -752,13 +771,14 @@ function lance_display() {
         }
     }
     function choose_lance_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < lance_firstvideo.length; i++) {
             lance_firstvideo[i].classList.add("off")
             lance_seconvideo[i].classList.remove("off")
             lance_thirdvideo[i].classList.add("off")
+            lance_seconvideo[0].play()
             lance_firstvideo[0].pause()
             lance_thirdvideo[0].pause()
             lance_firstvideo[0].currentTime = 0
@@ -766,13 +786,14 @@ function lance_display() {
         }
     }
     function choose_lance_thirdvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < lance_firstvideo.length; i++) {
             lance_firstvideo[i].classList.add("off")
             lance_seconvideo[i].classList.add("off")
             lance_thirdvideo[i].classList.remove("off")
+            lance_thirdvideo[0].play()
             lance_firstvideo[0].pause()
             lance_seconvideo[0].pause()
             lance_firstvideo[0].currentTime = 0
@@ -833,13 +854,14 @@ function glance_display() {
     <div class="glance_tvideo off">角力,可以抵擋魔物攻勢,並且跟魔物比拚力量後接者反擊,影片中的派生為全彈發射</div>`
 
     function choose_glance_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < glance_firstvideo.length; i++) {
             glance_firstvideo[i].classList.remove("off")
             glance_seconvideo[i].classList.add("off")
             glance_thirdvideo[i].classList.add("off")
+            glance_firstvideo[0].play()
             glance_seconvideo[0].pause()
             glance_thirdvideo[0].pause()
             glance_seconvideo[0].currentTime = 0
@@ -847,13 +869,14 @@ function glance_display() {
         }
     }
     function choose_glance_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < glance_firstvideo.length; i++) {
             glance_firstvideo[i].classList.add("off")
             glance_seconvideo[i].classList.remove("off")
             glance_thirdvideo[i].classList.add("off")
+            glance_seconvideo[0].play()
             glance_firstvideo[0].pause()
             glance_thirdvideo[0].pause()
             glance_firstvideo[0].currentTime = 0
@@ -861,13 +884,14 @@ function glance_display() {
         }
     }
     function choose_glance_thirdvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < glance_firstvideo.length; i++) {
             glance_firstvideo[i].classList.add("off")
             glance_seconvideo[i].classList.add("off")
             glance_thirdvideo[i].classList.remove("off")
+            glance_thirdvideo[0].play()
             glance_firstvideo[0].pause()
             glance_seconvideo[0].pause()
             glance_firstvideo[0].currentTime = 0
@@ -928,13 +952,14 @@ function switchaxe_display() {
     <div class="switchaxe_tvideo off">零距離解放斬,一種屬性解放攻擊,可以直接跳到魔物身上進行零距離攻擊</div>`
 
     function choose_switchaxe_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < switchaxe_firstvideo.length; i++) {
             switchaxe_firstvideo[i].classList.remove("off")
             switchaxe_seconvideo[i].classList.add("off")
             switchaxe_thirdvideo[i].classList.add("off")
+            switchaxe_firstvideo[0].play()
             switchaxe_seconvideo[0].pause()
             switchaxe_thirdvideo[0].pause()
             switchaxe_seconvideo[0].currentTime = 0
@@ -942,13 +967,14 @@ function switchaxe_display() {
         }
     }
     function choose_switchaxe_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < switchaxe_firstvideo.length; i++) {
             switchaxe_firstvideo[i].classList.add("off")
             switchaxe_seconvideo[i].classList.remove("off")
             switchaxe_thirdvideo[i].classList.add("off")
+            switchaxe_seconvideo[0].play()
             switchaxe_firstvideo[0].pause()
             switchaxe_thirdvideo[0].pause()
             switchaxe_firstvideo[0].currentTime = 0
@@ -956,13 +982,14 @@ function switchaxe_display() {
         }
     }
     function choose_switchaxe_thirdvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < switchaxe_firstvideo.length; i++) {
             switchaxe_firstvideo[i].classList.add("off")
             switchaxe_seconvideo[i].classList.add("off")
             switchaxe_thirdvideo[i].classList.remove("off")
+            switchaxe_thirdvideo[0].play()
             switchaxe_firstvideo[0].pause()
             switchaxe_seconvideo[0].pause()
             switchaxe_firstvideo[0].currentTime = 0
@@ -1023,13 +1050,14 @@ function cb_display() {
     <div class="cb_tvideo off">角力,可以抵擋魔物攻勢,並且跟魔物比拚力量後接者反擊</div>`
 
     function choose_cb_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < cb_firstvideo.length; i++) {
             cb_firstvideo[i].classList.remove("off")
             cb_seconvideo[i].classList.add("off")
             cb_thirdvideo[i].classList.add("off")
+            cb_firstvideo[0].play()
             cb_seconvideo[0].pause()
             cb_thirdvideo[0].pause()
             cb_seconvideo[0].currentTime = 0
@@ -1037,13 +1065,14 @@ function cb_display() {
         }
     }
     function choose_cb_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < cb_firstvideo.length; i++) {
             cb_firstvideo[i].classList.add("off")
             cb_seconvideo[i].classList.remove("off")
             cb_thirdvideo[i].classList.add("off")
+            cb_seconvideo[0].play()
             cb_firstvideo[0].pause()
             cb_thirdvideo[0].pause()
             cb_firstvideo[0].currentTime = 0
@@ -1051,13 +1080,14 @@ function cb_display() {
         }
     }
     function choose_cb_thirdvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < cb_firstvideo.length; i++) {
             cb_firstvideo[i].classList.add("off")
             cb_seconvideo[i].classList.add("off")
             cb_thirdvideo[i].classList.remove("off")
+            cb_thirdvideo[0].play()
             cb_firstvideo[0].pause()
             cb_seconvideo[0].pause()
             cb_firstvideo[0].currentTime = 0
@@ -1118,13 +1148,14 @@ function bugstick_display() {
     <div class="bugstick_tvideo off">操蟲棍有別於其他武器,是可以跳躍到空中進行攻擊和位移的,有多種派生</div>`
 
     function choose_bugstick_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < bugstick_firstvideo.length; i++) {
             bugstick_firstvideo[i].classList.remove("off")
             bugstick_seconvideo[i].classList.add("off")
             bugstick_thirdvideo[i].classList.add("off")
+            bugstick_firstvideo[0].play()
             bugstick_seconvideo[0].pause()
             bugstick_thirdvideo[0].pause()
             bugstick_seconvideo[0].currentTime = 0
@@ -1132,13 +1163,14 @@ function bugstick_display() {
         }
     }
     function choose_bugstick_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < bugstick_firstvideo.length; i++) {
             bugstick_firstvideo[i].classList.add("off")
             bugstick_seconvideo[i].classList.remove("off")
             bugstick_thirdvideo[i].classList.add("off")
+            bugstick_seconvideo[0].play()
             bugstick_firstvideo[0].pause()
             bugstick_thirdvideo[0].pause()
             bugstick_firstvideo[0].currentTime = 0
@@ -1146,13 +1178,14 @@ function bugstick_display() {
         }
     }
     function choose_bugstick_thirdvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < bugstick_firstvideo.length; i++) {
             bugstick_firstvideo[i].classList.add("off")
             bugstick_seconvideo[i].classList.add("off")
             bugstick_thirdvideo[i].classList.remove("off")
+            bugstick_thirdvideo[0].play()
             bugstick_firstvideo[0].pause()
             bugstick_seconvideo[0].pause()
             bugstick_firstvideo[0].currentTime = 0
@@ -1213,13 +1246,14 @@ function lbowgun_display() {
     <div class="lbowgun_tvideo off">黏著龍彈,一種特殊彈藥,可以黏到魔物身上,會在一定時間後打出大量傷害</div>`
 
     function choose_lbowgun_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < lbowgun_firstvideo.length; i++) {
             lbowgun_firstvideo[i].classList.remove("off")
             lbowgun_seconvideo[i].classList.add("off")
             lbowgun_thirdvideo[i].classList.add("off")
+            lbowgun_firstvideo[0].play()
             lbowgun_seconvideo[0].pause()
             lbowgun_thirdvideo[0].pause()
             lbowgun_seconvideo[0].currentTime = 0
@@ -1227,13 +1261,14 @@ function lbowgun_display() {
         }
     }
     function choose_lbowgun_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < lbowgun_firstvideo.length; i++) {
             lbowgun_firstvideo[i].classList.add("off")
             lbowgun_seconvideo[i].classList.remove("off")
             lbowgun_thirdvideo[i].classList.add("off")
+            lbowgun_seconvideo[0].play()
             lbowgun_firstvideo[0].pause()
             lbowgun_thirdvideo[0].pause()
             lbowgun_firstvideo[0].currentTime = 0
@@ -1241,13 +1276,14 @@ function lbowgun_display() {
         }
     }
     function choose_lbowgun_thirdvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < lbowgun_firstvideo.length; i++) {
             lbowgun_firstvideo[i].classList.add("off")
             lbowgun_seconvideo[i].classList.add("off")
             lbowgun_thirdvideo[i].classList.remove("off")
+            lbowgun_thirdvideo[0].play()
             lbowgun_firstvideo[0].pause()
             lbowgun_seconvideo[0].pause()
             lbowgun_firstvideo[0].currentTime = 0
@@ -1308,13 +1344,14 @@ function hbowgun_display() {
     <div class="hbowgun_tvideo off">騎乘作戰並非重弩的專利,但在眾多武器中重弩是相對適合這樣做的武器</div>`
 
     function choose_hbowgun_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < hbowgun_firstvideo.length; i++) {
             hbowgun_firstvideo[i].classList.remove("off")
             hbowgun_seconvideo[i].classList.add("off")
             hbowgun_thirdvideo[i].classList.add("off")
+            hbowgun_firstvideo[0].play()
             hbowgun_seconvideo[0].pause()
             hbowgun_thirdvideo[0].pause()
             hbowgun_seconvideo[0].currentTime = 0
@@ -1322,13 +1359,14 @@ function hbowgun_display() {
         }
     }
     function choose_hbowgun_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < hbowgun_firstvideo.length; i++) {
             hbowgun_firstvideo[i].classList.add("off")
             hbowgun_seconvideo[i].classList.remove("off")
             hbowgun_thirdvideo[i].classList.add("off")
+            hbowgun_seconvideo[0].play()
             hbowgun_firstvideo[0].pause()
             hbowgun_thirdvideo[0].pause()
             hbowgun_firstvideo[0].currentTime = 0
@@ -1336,13 +1374,14 @@ function hbowgun_display() {
         }
     }
     function choose_hbowgun_thirdvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < hbowgun_firstvideo.length; i++) {
             hbowgun_firstvideo[i].classList.add("off")
             hbowgun_seconvideo[i].classList.add("off")
             hbowgun_thirdvideo[i].classList.remove("off")
+            hbowgun_thirdvideo[0].play()
             hbowgun_firstvideo[0].pause()
             hbowgun_seconvideo[0].pause()
             hbowgun_firstvideo[0].currentTime = 0
@@ -1403,13 +1442,14 @@ function bow_display() {
     <div class="bow_tvideo off">龍之箭,原地蓄力並且射出一根威力強大的箭矢</div>`
 
     function choose_bow_firstvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < bow_firstvideo.length; i++) {
             bow_firstvideo[i].classList.remove("off")
             bow_seconvideo[i].classList.add("off")
             bow_thirdvideo[i].classList.add("off")
+            bow_firstvideo[0].play()
             bow_seconvideo[0].pause()
             bow_thirdvideo[0].pause()
             bow_seconvideo[0].currentTime = 0
@@ -1417,13 +1457,14 @@ function bow_display() {
         }
     }
     function choose_bow_seconvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < bow_firstvideo.length; i++) {
             bow_firstvideo[i].classList.add("off")
             bow_seconvideo[i].classList.remove("off")
             bow_thirdvideo[i].classList.add("off")
+            bow_seconvideo[0].play()
             bow_firstvideo[0].pause()
             bow_thirdvideo[0].pause()
             bow_firstvideo[0].currentTime = 0
@@ -1431,13 +1472,14 @@ function bow_display() {
         }
     }
     function choose_bow_thirdvideo() {
-        for(var i = 0;i < 3;i++){
+        for (var i = 0; i < 3; i++) {
             followvideo[i].classList.add("off")
         }
         for (var i = 0; i < bow_firstvideo.length; i++) {
             bow_firstvideo[i].classList.add("off")
             bow_seconvideo[i].classList.add("off")
             bow_thirdvideo[i].classList.remove("off")
+            bow_thirdvideo[0].play()
             bow_firstvideo[0].pause()
             bow_seconvideo[0].pause()
             bow_firstvideo[0].currentTime = 0
@@ -1488,14 +1530,15 @@ choose_gsw_button.addEventListener("click", gsw_display)
 choose_lsw_button.addEventListener("click", lsw_display)
 choose_db_button.addEventListener("click", db_display)
 // 武器演示和最後選擇外的事件觸發
+talk1_close.addEventListener("click", menu)
+choosebox_close.addEventListener("click", menu)
 weapon_box_close_button.addEventListener("click", menu)
 into_weapon_button.addEventListener("click", into_weapon)
-into_talk_button.addEventListener("click", intotalk)
+into_talk_button.addEventListener("click", start)
 heavebutton.addEventListener("click", chooseheave)
 dexbutton.addEventListener("click", choosedex)
 defbutton.addEventListener("click", choosedef)
 rangebutton.addEventListener("click", chooserange)
-startbutton.addEventListener("click", start)
 closebutton.addEventListener("click", menu)
 
 
