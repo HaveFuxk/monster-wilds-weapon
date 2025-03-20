@@ -3,10 +3,12 @@ body {
     padding: 0;
     cursor: url(img/mouse.png) 28 14, auto
 }
-*{
+
+* {
     font-family: "Noto Serif TC", serif;
     font-weight: bold;
 }
+
 @keyframes going {
     0% {
         opacity: 0;
@@ -28,9 +30,18 @@ body {
     z-index: 0;
 }
 
+.hambur {
+    position: absolute;
+    bottom: 3%;
+    right: 6%;
+    height: 5vh;
+    width: 11vw;
+    background-color: transparent
+}
+
 .firstpage {
     background-image: url(img/c_img_03_l.png);
-    background-position: -70% 0%;
+    background-position: -110% 0%;
     background-repeat: no-repeat;
     background-size: 80%;
     display: flex;
@@ -44,68 +55,96 @@ body {
     font-weight: bold;
     display: flex;
     position: absolute;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
-    top: 30%;
-    left: 70%;
+    top: 50%;
+    left: 55%;
     transform: translate(-50%, -50%);
-    /* height: 100%;
-    width: 100%; */
-    height: 500px;
-    width: 1000px;
-    background: url(img/index_title.png);
-    background-position: 0% 60%;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
+    height: 50vh;
+    width: 80vw;
+    border-radius: 40px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.7)40%, transparent);
     font-size: 70px;
     color: white
 }
 
-.indexchs_box {
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
-    justify-content: center;
-    align-content: space-evenly;
-    top: 70%;
-    left: 65%;
-    transform: translate(-50%, -50%);
-    height: 50%;
-    width: 40%;
-
+.indextalk_title {
+    padding-bottom: 8%;
+    padding-right: 10%;
 }
 
-.indexchs {
-    padding-left: 6%;
-    font-family: "Noto Serif TC", serif;
-    font-weight: bold;
+.indexchs_box {
     display: flex;
-    justify-content: left;
+    flex-wrap: nowrap;
+    position: absolute;
+    justify-content: center;
+    font-size: 30px;
+    bottom: 0%;
+    right: -15%;
+    transform: translate(-50%, -50%);
+    height: 20%;
+    width: 40%;
+}
+
+.indexchs_text {
+    position: absolute;
+    right: 39%;
+    bottom: -27%;
+    background-image: url(img/index_talk_final.png);
+    background-position: -80% 80%;
+    background-repeat: no-repeat;
+    background-size: 105% auto;
+    display: flex;
+    justify-content: end;
     align-items: center;
     color: white;
-    font-size: 40px;
-    height: 100px;
-    width: 55%;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.8)40%, transparent);
+    font-size: 25px;
+    height: 100%;
+    width: 40%;
     border: 0;
-    cursor: url(img/click3.png) 10 0, auto;
     animation-name: going;
     animation-duration: 0.4s;
 }
 
 .into_talk {
-    background-image: url(img/index_talk_up.png);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0%;
+    right: 16%;
+    height: 35%;
+    width: 20%;
+    font-size: 25px;
+    background-color: #FFD110;
+    border: 0;
+    border-radius: 0 4px 4px 0;
+    cursor: url(img/click3.png) 10 0, auto;
+    animation-name: going;
+    animation-duration: 0.4s;
+    transition-duration: 1s
+}
 
+.into_talk:hover {
+    background-color: aliceblue;
+    height: 38%;
+    width: 22%;
 }
 
 .into_weapon {
-    background-image: url(img/index_talk_dow.png);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 90% auto;
+    margin-right: 2%;
+    color: rgba(255, 255, 255, 0.9);
+    background-color: transparent;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 2px solid;
+}
+
+.index_button {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: transparent;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 2px solid;
 }
 
 .all_weapon_box {
@@ -176,39 +215,43 @@ body {
     font-size: 70px;
     color: white
 }
-@media(max-width:1440px){
+
+@media(max-width:1440px) {
     .title_text {
         font-size: 55px;
         color: white
     }
 }
-@media(max-width:1024px){
+
+@media(max-width:1024px) {
     .title_text {
         font-size: 40px;
         color: white
     }
 }
-@media(max-width:768px){
+
+@media(max-width:768px) {
     .title_text {
         font-size: 30px;
         color: white
     }
 }
-@media(max-width:425px){
+
+@media(max-width:425px) {
     .title_text {
         font-size: 33px;
         color: white
     }
 }
-@media(max-width:375px){
+
+@media(max-width:375px) {
     .title_text {
         font-size: 28px;
         color: white
     }
 }
-@media(max-width:320px){
 
-}
+@media(max-width:320px) {}
 
 .talk_bg {
     /* background-image: url(img/char3.png); */
@@ -246,7 +289,8 @@ body {
     border-radius: 40px;
     background: rgba(0, 0, 0, 0.6);
 }
-@media(max-width:425px){
+
+@media(max-width:425px) {
     .talk1 {
         text-align: center;
         display: flex;
@@ -262,7 +306,8 @@ body {
         background: rgba(0, 0, 0, 0.6);
     }
 }
-@media(max-width:375px){
+
+@media(max-width:375px) {
     .talk1_box::before {
         font-family: "EB Garamond", serif;
         font-weight: 400;
@@ -275,7 +320,8 @@ body {
         z-index: 2;
     }
 }
-@media(max-width:320px){
+
+@media(max-width:320px) {
     .talk1_box::before {
         font-family: "EB Garamond", serif;
         font-weight: 400;
@@ -300,7 +346,8 @@ body {
     color: white;
     z-index: 2;
 }
-@media(max-width:1440px){
+
+@media(max-width:1440px) {
     .talk1_box::before {
         font-family: "EB Garamond", serif;
         font-weight: 400;
@@ -313,7 +360,8 @@ body {
         z-index: 2;
     }
 }
-@media(max-width:1024px){
+
+@media(max-width:1024px) {
     .talk1_box::before {
         font-family: "EB Garamond", serif;
         font-weight: 400;
@@ -326,7 +374,8 @@ body {
         z-index: 2;
     }
 }
-@media(max-width:768px){
+
+@media(max-width:768px) {
     .talk1_box::before {
         font-family: "EB Garamond", serif;
         font-weight: 400;
@@ -339,20 +388,22 @@ body {
         z-index: 2;
     }
 }
-@media(max-width:425px){
+
+@media(max-width:425px) {
     .talk1_box::before {
         font-family: "EB Garamond", serif;
         font-weight: 400;
         content: 'Question 1';
         font-size: 60px;
         position: absolute;
-        top:4%;
+        top: 4%;
         left: 13%;
         color: white;
         z-index: 2;
     }
 }
-@media(max-width:375px){
+
+@media(max-width:375px) {
     .talk1_box::before {
         font-family: "EB Garamond", serif;
         font-weight: 400;
@@ -365,7 +416,8 @@ body {
         z-index: 2;
     }
 }
-@media(max-width:320px){
+
+@media(max-width:320px) {
     .talk1_box::before {
         font-family: "EB Garamond", serif;
         font-weight: 400;
@@ -378,6 +430,7 @@ body {
         z-index: 2;
     }
 }
+
 .ans1_box {
     display: flex;
     flex-direction: column;
@@ -389,7 +442,8 @@ body {
     height: 50vh;
     width: 80vw;
 }
-@media(max-width:768px){
+
+@media(max-width:768px) {
     .ans1_box {
         display: flex;
         flex-direction: column;
@@ -402,7 +456,8 @@ body {
         width: 90vw;
     }
 }
-@media(max-width:425px){
+
+@media(max-width:425px) {
     .ans1_box {
         display: flex;
         flex-direction: column;
@@ -415,12 +470,10 @@ body {
         width: 90vw;
     }
 }
-@media(max-width:375px){
 
-}
-@media(max-width:320px){
+@media(max-width:375px) {}
 
-}
+@media(max-width:320px) {}
 
 .ans1 {
     display: flex;
@@ -443,7 +496,8 @@ body {
     animation-name: going;
     animation-duration: 0.5s;
 }
-@media(max-width:1440px){
+
+@media(max-width:1440px) {
     .ans1_text {
         text-align: center;
         height: 50%;
@@ -457,7 +511,8 @@ body {
         animation-duration: 0.5s;
     }
 }
-@media(max-width:1024px){
+
+@media(max-width:1024px) {
     .ans1_text {
         text-align: center;
         height: 40%;
@@ -471,7 +526,8 @@ body {
         animation-duration: 0.5s;
     }
 }
-@media(max-width:768px){
+
+@media(max-width:768px) {
     .ans1_text {
         text-align: center;
         height: 40%;
@@ -486,13 +542,12 @@ body {
         animation-duration: 0.5s;
     }
 }
-@media(max-width:425px){
-   
-}
-@media(max-width:375px){
 
-}
-@media(max-width:320px){
+@media(max-width:425px) {}
+
+@media(max-width:375px) {}
+
+@media(max-width:320px) {
     .ans1_text {
         text-align: center;
         height: 40%;
@@ -507,10 +562,10 @@ body {
         animation-duration: 0.5s;
     }
 }
+
 .all_weapon_button:hover,
 .talk1_close:hover,
 .choosebox_close:hover,
-.indexchs:hover,
 .ans1_text:hover,
 .heave1_text:hover,
 .dex1_text:hover,
@@ -523,7 +578,8 @@ body {
     border-radius: 5px;
     box-shadow: 0 1px 5px 1px #b9da7c;
 }
-.choosebox::before{
+
+.choosebox::before {
     font-family: "EB Garamond", serif;
     font-weight: 400;
     content: 'Question 2';
@@ -899,7 +955,7 @@ body {
 }
 
 .talk1_close,
-.choosebox_close{
+.choosebox_close {
     z-index: 5;
     position: absolute;
     right: 4%;
@@ -913,9 +969,10 @@ body {
     cursor: url(img/click3.png) 10 0, auto;
 }
 
-@media(max-width:425px){
+@media(max-width:425px) {
+
     .talk1_close,
-    .choosebox_close{
+    .choosebox_close {
         z-index: 5;
         position: absolute;
         right: 4%;
@@ -929,28 +986,19 @@ body {
         cursor: url(img/click3.png) 10 0, auto;
     }
 }
-@media(max-width:375px){
 
-}
-@media(max-width:320px){
+@media(max-width:375px) {}
 
-}
+@media(max-width:320px) {}
 
-@media(max-width:1440px){
-    
-}
-@media(max-width:1024px){
+@media(max-width:1440px) {}
 
-}
-@media(max-width:768px){
+@media(max-width:1024px) {}
 
-}
-@media(max-width:425px){
+@media(max-width:768px) {}
 
-}
-@media(max-width:375px){
+@media(max-width:425px) {}
 
-}
-@media(max-width:320px){
+@media(max-width:375px) {}
 
-}
+@media(max-width:320px) {}
