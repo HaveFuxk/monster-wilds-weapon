@@ -334,7 +334,8 @@ body {
     font-size: 25px;
     border: 0;
     border-radius: 0 4px 4px 0;
-
+    background-color:#FFD110 ;
+    transition: 1s;
 }
 
 @media(max-width:1440px) {
@@ -349,7 +350,8 @@ body {
         font-size: 18px;
         border: 0;
         border-radius: 0 4px 4px 0;
-
+        background-color:#FFD110 ;
+        transition: 1s;
     }
 }
 
@@ -365,7 +367,8 @@ body {
         font-size: 13px;
         border: 0;
         border-radius: 0 4px 4px 0;
-
+        background-color:#FFD110 ;
+        transition: 1s;
     }
 }
 
@@ -381,7 +384,8 @@ body {
         font-size: 13px;
         border: 0;
         border-radius: 0 4px 4px 0;
-
+        background-color:#FFD110 ;
+        transition: 1s;
     }
 }
 
